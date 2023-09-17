@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'tabla didactica',
+  appId: 'com.nieva.tabladidactica',
+  appName: 'Tabla Didactica',
   webDir: 'www',
   server: {
     androidScheme: 'https'

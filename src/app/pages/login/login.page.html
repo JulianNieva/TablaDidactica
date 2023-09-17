@@ -1,0 +1,53 @@
+<ion-content no-scroll>
+    <img src="assets/icons/icon.png" class="jello-horizontal">
+  <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>
+        Iniciar Sesión   
+        <ion-spinner *ngIf="isLoading" name="circles" style="position: absolute;"></ion-spinner>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form>
+        <ion-item lines="none" class="input">
+          <ion-icon slot="start" size="large" src="assets/icons/mail.svg"></ion-icon>
+          <ion-input type="email" label="Correo Electrónico" labelPlacement="floating" [formControl]="email"></ion-input>
+        </ion-item>
+        <div color="danger" *ngIf="email.errors && (email.dirty || email.touched)">
+          <ion-text color="danger" *ngIf="email.errors['required']">¡El campo no puede estar vacio!</ion-text>
+          <ion-text color="danger" *ngIf="email.errors['email']">¡Debe ingresar un mail válido!</ion-text>
+        </div>
+        <br>
+        <ion-item lines="none" class="input">
+          <ion-icon slot="start" size="large" src="assets/icons/password.svg" ></ion-icon>
+          <ion-input type="password" label="Contraseña" labelPlacement="floating" [formControl]="clave"></ion-input>
+        </ion-item>
+        <div color="danger" *ngIf="clave.errors && (clave.dirty || clave.touched)">
+          <ion-text color="danger" *ngIf="clave.errors['required']">¡El campo no puede estar vacio!</ion-text>
+          <ion-text color="danger" *ngIf="clave.errors['minlength']">¡Debe haber al menos 6 caracteres!</ion-text>
+        </div>
+        <br>
+          <ion-button id="login" (click)="login()"size="default" [disabled]="!isFormValid || this.isLoading" expand="block" fill="clear" shape="round">Ingresar</ion-button>
+        <ion-card-header class="ion-text-center">
+          <ion-card-title>Ingreso Rápido</ion-card-title>
+        </ion-card-header>
+        <ion-list>
+          <ion-radio-group value="ninguno">
+            <ion-item lines="none">
+              <ion-radio (click)="CargarForm(0)" justify="space-between">Admin</ion-radio><br/>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-radio (click)="CargarForm(2)" justify="space-between">Usuario</ion-radio><br/>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-radio (click)="CargarForm(1)" justify="space-between">Invitado</ion-radio><br/>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-radio value="ninguno" (click)="CargarForm(-1)" justify="space-between">Ninguno</ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </form>   
+    </ion-card-content>
+  </ion-card>
+</ion-content>
