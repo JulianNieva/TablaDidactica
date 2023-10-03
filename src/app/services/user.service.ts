@@ -1,22 +1,36 @@
 import { Injectable } from '@angular/core';
 import { Auth,AuthErrorCodes,signInWithEmailAndPassword,signOut } from '@angular/fire/auth';
 import { ToastController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private auth:Auth,private toast:ToastController) { }
+  constructor(private auth:Auth,private toast:ToastController,private loadController:LoadingController,private navCtrl:NavController) { }
 
   login(email:string,password:string)
   {
     return signInWithEmailAndPassword(this.auth,email,password)
   }
 
-  logout()
+  async logout()
   {
-    return signOut(this.auth)
+    const loading = await this.loadController.create({
+      message: 'Cerrando Sesión...',
+      showBackdrop: true,
+      spinner: "lines"
+    });
+    loading.present();
+
+    signOut(this.auth).then(() => {
+      setTimeout(() => {
+        this.navCtrl.navigateRoot('/login');
+        loading.dismiss();
+      }, 2000);
+    })
   }
 
   obtenerError(error:any) {

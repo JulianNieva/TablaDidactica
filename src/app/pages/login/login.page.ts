@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators,FormGroup,FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginPage implements OnInit {
     {email: 'usuario@usuario.com', password:'333333'}
   ]
 
-  constructor(private userService:UserService,private router:Router) 
+  constructor(private userService:UserService,private navCtrl:NavController) 
   { 
     this.email = new FormControl('',[
       Validators.required,
@@ -41,17 +42,21 @@ export class LoginPage implements OnInit {
   login()
   {
     this.isLoading = true;
-    this.userService.login(this.email.value?.toString(),this.clave.value?.toString())
-    .then(res => {
+     this.userService.login(this.email.value?.toString(),this.clave.value?.toString())
+    .then(response => {
       setTimeout(() => {
-        this.isLoading = false
-        this.router.navigate(['/home']).then(() => this.CargarForm(-1))
+        this.userService.MostrarToast("EXITO!","Seras redirigido a la pagina principal","success","checkmark-outline").then(res => {
+          setTimeout(() => {
+            this.navCtrl.navigateRoot(['/home'])
+            this.isLoading = false
+          },2500)
+        })
       },2000)
     }).catch(error => {
       setTimeout(() => {
         console.log(error)
-        this.isLoading = false
         this.userService.MostrarToast("ERROR!",this.userService.obtenerError(error),"danger","remove-circle-outline")
+        this.isLoading = false
       },2000)
     })
   }

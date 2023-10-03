@@ -1,0 +1,81 @@
+//FONDO
+
+ion-content {
+    --background: none
+}
+
+.contenedor {
+    background-image: url('../../../assets/fondos/backsplash.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+@-webkit-keyframes bounce-in-top{0%{-webkit-transform:translateY(-500px);transform:translateY(-500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(-65px);transform:translateY(-65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(-28px);transform:translateY(-28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(-8px);transform:translateY(-8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes bounce-in-top{0%{-webkit-transform:translateY(-500px);transform:translateY(-500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(-65px);transform:translateY(-65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(-28px);transform:translateY(-28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(-8px);transform:translateY(-8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
+.bounce-in-top{-webkit-animation:bounce-in-top 2.6s both;animation:bounce-in-top 2.6s both}
+//ICONO
+.contenedor-imagen {
+    position: relative;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.contenedor-imagen img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+}
+
+//Font
+@import url("https://fonts.googleapis.com/css?family=Sanchez&display=swap");
+
+@-webkit-keyframes swirl-in-fwd{0%{-webkit-transform:rotate(-540deg) scale(0);transform:rotate(-540deg) scale(0);opacity:0}100%{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1);opacity:1}}@keyframes swirl-in-fwd{0%{-webkit-transform:rotate(-540deg) scale(0);transform:rotate(-540deg) scale(0);opacity:0}100%{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1);opacity:1}}
+.swirl-in-fwd{-webkit-animation:swirl-in-fwd 2.5s ease-out both;animation:swirl-in-fwd 2.5s ease-out both}
+
+.header-text {
+    font-size: 30px;
+    line-height: 60px;
+    font-family:"Sanchez";
+    text-align: center;
+    color: #E76F51;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    transform: translateY(-500%);
+}
+
+@-webkit-keyframes bounce-in-bottom{0%{-webkit-transform:translateY(500px);transform:translateY(500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(65px);transform:translateY(65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(28px);transform:translateY(28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(8px);transform:translateY(8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes bounce-in-bottom{0%{-webkit-transform:translateY(500px);transform:translateY(500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(65px);transform:translateY(65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(28px);transform:translateY(28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(8px);transform:translateY(8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
+.bounce-in-bottom{-webkit-animation:bounce-in-bottom 2.6s both;animation:bounce-in-bottom 2.6s both}
+
+.text2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    transform: translateY(100%);
+}
