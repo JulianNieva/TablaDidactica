@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+$font: 'Lora', serif;
+
 ion-content{
     --background: #2A8D8F;
 }
@@ -27,11 +30,13 @@ ion-card{
 }
 
 ion-card-title{
+    font-family: $font;
     color:#E76F51;
     font-weight: bold;  
 }
 
 ion-button{
+    font-family: $font;
     --background:#2A8D8F;
     color:#E76F51;
 }
@@ -57,7 +62,13 @@ ion-list{
             font-weight: bold;
             font-size: 15px;
             color:#E9C46A;
+            font-family: $font;
+            letter-spacing: 0.2rem;
         }
     }
+}
+
+ion-text,ion-input{
+    font-family: $font;
 }
 

@@ -162,9 +162,9 @@
   </ion-grid>
 
   <!-- ++++++++++++++++++++++++++++++++ SPINNER ++++++++++++++++++++++++++++++++ -->
-  <ion-spinner *ngIf="pressedButton" name="crescent" color="danger" style="
-      display: block;
-      margin: auto;
-      position: inherit;
-    "></ion-spinner>
+    <!-- ******************************* SPINNER *******************************-->
+    <div *ngIf="pressedButton" class="custom-spinner">
+      <h1 class="spinnerh1">Cargando...</h1>
+      <img src="../../../assets/icons/icon.png" alt="Custom Spinner" />
+    </div>
 </ion-content>
